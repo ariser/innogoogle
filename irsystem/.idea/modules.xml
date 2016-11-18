@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/irsystem.iml" filepath="$PROJECT_DIR$/irsystem.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/irsystem.iml" filepath="$PROJECT_DIR$/.idea/modules/irsystem.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/irsystem-build.iml" filepath="$PROJECT_DIR$/.idea/modules/irsystem-build.iml" />
     </modules>
   </component>
 </project>
