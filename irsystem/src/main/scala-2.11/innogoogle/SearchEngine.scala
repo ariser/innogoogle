@@ -25,7 +25,7 @@ object SearchEngine extends App {
 
 	println("Innogoogle:")
 
-	val scoring = new Scoring(index).fastCosineScore(scala.io.StdIn.readLine(), 2).foreach(println)
+	val scoring = new Scoring(index).fastCosineScore(scala.io.StdIn.readLine()).foreach(println)
 
 
 }
