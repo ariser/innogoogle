@@ -1,4 +1,4 @@
-name := "crawler"
+name := "wikicrawler"
 
 version := "1.0"
 
