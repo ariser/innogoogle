@@ -1,17 +1,34 @@
 package innogoogle
 import java.io._
+import doobie.imports._, scalaz.effect.IO
+import doobie.imports._
+import scalaz._, Scalaz._
+import scalaz.concurrent.Task
+
 
 object SearchEngine extends App {
-	def indexFromFile(filePath: String): Index = {
-		val emptyIndex = new Index()
-		val source = io.Source.fromFile(filePath)
-		val data: Vector[String] = source.mkString.split("#").toVector
-		val index = data.foldLeft(emptyIndex) { (nextIndex, doc) => nextIndex.index(doc) }
-		source.close()
-		index
+
+	val xa = DriverManagerTransactor[Task](
+		"org.postgresql.Driver", "jdbc:postgresql:irdata", "postgres", "admin"
+	)
+
+	case class Article (id: Int, url: String, title: String, content: String)
+
+	def select: List[Article] =
+	{
+		sql"select id, url, title, article_content from article"
+				.query[Article] // Query0[String]
+				.list // ConnectionIO[List[String]]
+				.transact(xa) // Task[List[String]]
+				.unsafePerformSync // List[String]
+				.take(1000)
 	}
 
-	val index  = indexFromFile("docs.txt")
+	def indexFromPostgres: Index = {
+		val emptyIndex = new Index()
+		val index = select.foldLeft(emptyIndex) { (nextIndex, doc) => nextIndex.index(doc.id, doc.url, doc.content) }
+		index
+	}
 
 /*	serialization
 
@@ -25,8 +42,7 @@ object SearchEngine extends App {
 
 	println("Innogoogle:")
 
-	val scoring = new Scoring(index).fastCosineScore(scala.io.StdIn.readLine()).foreach(println)
-
+	val scoring = new Scoring(indexFromPostgres).fastCosineScore(scala.io.StdIn.readLine()).foreach(println)
 
 }
 

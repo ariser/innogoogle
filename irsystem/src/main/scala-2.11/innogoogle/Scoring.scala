@@ -25,7 +25,7 @@ class Scoring(index: Index) {
 
 	private def scoreResult(docIdAndScore: (Int, Double)): Result = {
 		val (docId, score) = docIdAndScore
-		Result(docId, index.doc(docId), score / index.doc(docId).length)// TODO: to choose a better normalization
+		Result(docId, index.url(docId), score / index.doc(docId).length)// TODO: to choose a better normalization
 	}
 }
 
