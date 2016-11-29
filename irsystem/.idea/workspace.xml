@@ -33,8 +33,8 @@
       <file leaf-file-name="Tokenizer.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala-2.11/innogoogle/Tokenizer.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
+            <state relative-caret-position="170">
+              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -43,18 +43,18 @@
       <file leaf-file-name="PorterStemmer.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala-2.11/innogoogle/PorterStemmer.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
+            <state relative-caret-position="17">
               <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Index.scala" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Index.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala-2.11/innogoogle/Index.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+            <state relative-caret-position="493">
+              <caret line="29" column="58" selection-start-line="29" selection-start-column="58" selection-end-line="29" selection-end-column="58" />
               <folding />
             </state>
           </provider>
@@ -63,21 +63,21 @@
       <file leaf-file-name="Scoring.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala-2.11/innogoogle/Scoring.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+            <state relative-caret-position="238">
+              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SearchEngine.scala" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SearchEngine.scala" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/scala-2.11/innogoogle/SearchEngine.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+            <state relative-caret-position="68">
+              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
               <folding>
                 <element signature="e#19#35#0" expanded="true" />
-                <marker date="1480350651680" expanded="true" signature="427:478" ph="select id, u... article" />
+                <marker date="1480415236332" expanded="true" signature="427:478" ph="select id, u... article" />
               </folding>
             </state>
           </provider>
@@ -114,9 +114,9 @@
         <option value="$PROJECT_DIR$/stopwords.txt" />
         <option value="$PROJECT_DIR$/src/main/scala-2.11/innogoogle/PorterStemmer.scala" />
         <option value="$PROJECT_DIR$/docs.txt" />
-        <option value="$PROJECT_DIR$/src/main/scala-2.11/innogoogle/SearchEngine.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala-2.11/innogoogle/Scoring.scala" />
         <option value="$PROJECT_DIR$/src/main/scala-2.11/innogoogle/Index.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala-2.11/innogoogle/Scoring.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala-2.11/innogoogle/SearchEngine.scala" />
       </list>
     </option>
   </component>
@@ -157,8 +157,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -251,7 +252,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -828,12 +828,15 @@
       <workItem from="1479487498079" duration="1985000" />
       <workItem from="1479489610564" duration="1456000" />
       <workItem from="1479561560967" duration="2008000" />
-      <workItem from="1480341274207" duration="10607000" />
+      <workItem from="1480341274207" duration="10802000" />
+      <workItem from="1480366461221" duration="588000" />
+      <workItem from="1480372786752" duration="1425000" />
+      <workItem from="1480414893940" duration="341000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56819000" />
+    <option name="totallyTimeSpent" value="59368000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1378" height="744" extended-state="0" />
@@ -847,7 +850,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21259843" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21259843" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -925,7 +928,7 @@
           <caret line="25" column="26" selection-start-line="25" selection-start-column="26" selection-end-line="25" selection-end-column="26" />
           <folding>
             <element signature="e#19#35#0" expanded="true" />
-            <marker date="1480350651680" expanded="true" signature="427:478" ph="select id, u... article" />
+            <marker date="1480415236332" expanded="true" signature="427:478" ph="select id, u... article" />
           </folding>
         </state>
       </provider>
@@ -968,7 +971,7 @@
           <caret line="25" column="26" selection-start-line="25" selection-start-column="26" selection-end-line="25" selection-end-column="26" />
           <folding>
             <element signature="e#19#35#0" expanded="true" />
-            <marker date="1480350651680" expanded="true" signature="427:478" ph="select id, u... article" />
+            <marker date="1480415236332" expanded="true" signature="427:478" ph="select id, u... article" />
           </folding>
         </state>
       </provider>
@@ -1018,7 +1021,7 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#19#35#0" expanded="true" />
-            <marker date="1480350651680" expanded="true" signature="427:478" ph="select id, u... article" />
+            <marker date="1480415236332" expanded="true" signature="427:478" ph="select id, u... article" />
           </folding>
         </state>
       </provider>
@@ -1061,7 +1064,7 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#19#35#0" expanded="true" />
-            <marker date="1480350651680" expanded="true" signature="427:478" ph="select id, u... article" />
+            <marker date="1480415236332" expanded="true" signature="427:478" ph="select id, u... article" />
           </folding>
         </state>
       </provider>
@@ -1072,7 +1075,7 @@
           <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
           <folding>
             <element signature="e#19#35#0" expanded="true" />
-            <marker date="1480350651680" expanded="true" signature="427:478" ph="select id, u... article" />
+            <marker date="1480415236332" expanded="true" signature="427:478" ph="select id, u... article" />
           </folding>
         </state>
       </provider>
@@ -1111,7 +1114,7 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#19#35#0" expanded="true" />
-            <marker date="1480350651680" expanded="true" signature="427:478" ph="select id, u... article" />
+            <marker date="1480415236332" expanded="true" signature="427:478" ph="select id, u... article" />
           </folding>
         </state>
       </provider>
@@ -1159,46 +1162,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala-2.11/innogoogle/Tokenizer.scala">
+    <entry file="file://$PROJECT_DIR$/src/main/scala-2.11/innogoogle/Scoring.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
+        <state relative-caret-position="238">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala-2.11/innogoogle/Index.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="29" column="58" selection-start-line="29" selection-start-column="58" selection-end-line="29" selection-end-column="58" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala-2.11/innogoogle/PorterStemmer.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
+        <state relative-caret-position="17">
           <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala-2.11/innogoogle/Scoring.scala">
+    <entry file="file://$PROJECT_DIR$/src/main/scala-2.11/innogoogle/Tokenizer.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+        <state relative-caret-position="170">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala-2.11/innogoogle/SearchEngine.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+        <state relative-caret-position="68">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
           <folding>
             <element signature="e#19#35#0" expanded="true" />
-            <marker date="1480350651680" expanded="true" signature="427:478" ph="select id, u... article" />
+            <marker date="1480415236332" expanded="true" signature="427:478" ph="select id, u... article" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala-2.11/innogoogle/Index.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>

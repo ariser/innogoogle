@@ -17,21 +17,21 @@ object SearchEngine extends App {
 	def select: List[Article] =
 	{
 		sql"select id, url, title, article_content from article"
-				.query[Article] // Query0[String]
-				.list // ConnectionIO[List[String]]
-				.transact(xa) // Task[List[String]]
-				.unsafePerformSync // List[String]
+				.query[Article] // Query0[Article]
+				.list // ConnectionIO[List[Article]]
+				.transact(xa) // Task[List[Article]]
+				.unsafePerformSync // List[Article]
 				.take(1000)
 	}
 
 	def indexFromPostgres: Index = {
 		val emptyIndex = new Index()
-		val index = select.foldLeft(emptyIndex) { (nextIndex, doc) => nextIndex.index(doc.id, doc.url, doc.content) }
+		val index = select.foldLeft(emptyIndex) { (nextIndex, doc) => nextIndex.index(doc.id, doc.url, doc.title, doc.content) }
 		index
 	}
 
 /*	serialization
-
+	val index: Index = indexFromPostgres
 	val oos = new ObjectOutputStream(new FileOutputStream("index.tmp"))
 	oos.writeObject(index)
 	oos.close
