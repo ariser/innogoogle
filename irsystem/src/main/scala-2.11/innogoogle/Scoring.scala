@@ -22,7 +22,6 @@ class Scoring(index: Index) {
 			posting <- index.postings(term)
 		} scores.put(posting.docId, scores(posting.docId) + wf(posting.tf) * idf(term))
 
-		//TODO: a better approach is to use a heap to retrieve top K
 		scores.map(scoreResult).toSeq.sortWith(_.score > _.score).take(topK)
 	}
 
