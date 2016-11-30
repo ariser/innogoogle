@@ -29,7 +29,7 @@ class WikiCrawler() {
       val url = link._2
       if (Storage.contains(url)) {
         if (label != null) {
-          new UpdateRefsAsync(url, label)
+          new UpdateRefsAsync(url, label).run()
         }
         null
       } else {

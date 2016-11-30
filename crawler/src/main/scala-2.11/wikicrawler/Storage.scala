@@ -56,7 +56,7 @@ object Storage {
     val count = sql"select count(id) from wikipedia where url=$url"
       .query[Int]
       .unique
-      .quick
+      .transact(xa)
       .run
     count > 0
   }
