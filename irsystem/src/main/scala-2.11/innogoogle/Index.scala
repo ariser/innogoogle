@@ -4,7 +4,7 @@ case class Posting(docId: Int, tf: Int)
 
 class Index(val tokenizer: Tokenizer = Tokenizer(),
 			private val invertedIndex: Map[String, List[Posting]] = Map.empty,
-			private val data: IndexedSeq[String] = Vector.empty,
+			private val data: Map[Int, String] = Map.empty,
 			private val urlMap: Map[Int, (String, String)] = Map.empty) extends Serializable {
 
 
@@ -21,13 +21,17 @@ class Index(val tokenizer: Tokenizer = Tokenizer(),
 		var newUrlMap = urlMap
 		newUrlMap += (id -> (title, url))
 
-		new Index(tokenizer, newInverted, data :+ doc, newUrlMap)
+
+		var newData = data
+		newData += (id -> doc)
+
+		new Index(tokenizer, newInverted, newData, newUrlMap)
 
 	}
 
 	def size = invertedIndex.size
 
-	def doc(id: Int) = data(id-1)
+	def doc(id: Int) = data(id)
 
 	def title(id: Int) = urlMap(id)._1.toString
 
