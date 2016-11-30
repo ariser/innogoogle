@@ -4,7 +4,6 @@ import doobie.imports._
 import doobie.contrib.postgresql.pgtypes._
 import scalaz._, Scalaz._
 import scalaz.concurrent.Task
-import doobie.util.update.Update0
 
 case class Article(
                     id: Int,
