@@ -8,7 +8,6 @@ import scala.concurrent.ExecutionContext.Implicits.global
 
 class WikiCrawler() {
   private val browser = JsoupBrowser()
-  private var collected: Set[String] = Set()
 
   def start(entryPoint: String): Unit = {
     if (entryPoint != null && entryPoint.nonEmpty) {
@@ -28,13 +27,12 @@ class WikiCrawler() {
     val aggregated: Future[List[ArticleCrawlerResult]] = Future.sequence(links.map(link => Future {
       val label = link._1
       val url = link._2
-      if (collected.contains(url)) {
+      if (Storage.contains(url)) {
         if (label != null) {
           new UpdateRefsAsync(url, label)
         }
         null
       } else {
-        collected += url
         val result = new ArticleCrawler(browser, url, label).call()
         if (result != null) {
           new AddArticleAsync(result).run()

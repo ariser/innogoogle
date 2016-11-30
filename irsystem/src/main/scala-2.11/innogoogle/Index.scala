@@ -27,7 +27,7 @@ class Index(val tokenizer: Tokenizer = Tokenizer(),
 
 	def size = invertedIndex.size
 
-	def doc(id: Int) = data(id-1)//starts from 0 in vector
+	def doc(id: Int) = data(id-1)
 
 	def title(id: Int) = urlMap(id)._1.toString
 

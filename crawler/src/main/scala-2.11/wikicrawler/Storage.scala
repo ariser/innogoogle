@@ -51,6 +51,15 @@ object Storage {
       .quick
       .run
   }
+
+  def contains(url: String): Boolean = {
+    val count = sql"select count(id) from wikipedia where url=$url"
+      .query[Int]
+      .unique
+      .quick
+      .run
+    count > 0
+  }
 }
 
 class AddArticleAsync(article: ArticleCrawlerResult) extends Runnable {
