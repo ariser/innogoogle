@@ -23,21 +23,29 @@ class WikiCrawler() {
   }
 
   private def processLinks(links: List[(String, String)]): Unit = {
+    if (links.isEmpty) return
+
     val aggregated: Future[List[ArticleCrawlerResult]] = Future.sequence(links.map(link => Future {
       val label = link._1
       val url = link._2
       if (collected.contains(url)) {
+        if (label != null) {
+          new UpdateRefsAsync(url, label)
+        }
         null
       } else {
         collected += url
-        new ArticleCrawler(browser, url, label).call()
+        val result = new ArticleCrawler(browser, url, label).call()
+        if (result != null) {
+          new AddArticleAsync(result).run()
+        }
+        result
       }
     }))
 
     val result: List[ArticleCrawlerResult] = Await.result(aggregated, Duration.Inf)
     val newLinks = result.flatMap(result => if (result != null) result.links else List())
 
-//    println(newLinks.mkString(", "))
     println("New links acquired: " + newLinks.size)
 
     processLinks(newLinks)

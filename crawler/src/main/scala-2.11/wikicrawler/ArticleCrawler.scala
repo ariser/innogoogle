@@ -26,23 +26,23 @@ class ArticleCrawler(browser: JsoupBrowser, url: String, reference: String = nul
     val articleLinks: List[Element] = article.get >> elementList("a")
     val valuableLinks = articleLinks.filter(filterLinks)
 
-    val h2Nodes = article.get >> elementList("h2 .mw-headline")
-    val h2Text = h2Nodes.map(_.text)
+    val h2Nodes = articleNodes.filter(filterH2)
+    val h2Text = h2Nodes.map(_ >> text(".mw-headline")).toList
 
-    val h3Nodes = article.get >> elementList("h3 .mw-headline")
-    val h3Text = h3Nodes.map(_.text)
+    val h3Nodes = articleNodes.filter(filterH3)
+    val h3Text = h3Nodes.map(_ >> text(".mw-headline")).toList
 
     print("Thread: " + Thread.currentThread.getName + "; ")
     println("Article title: " + title)
 
     val result = new ArticleCrawlerResult()
     result.title = title
-    result.articleContent = articleContent
+    result.content = articleContent
     result.url = url
-    if (reference != null) result.references = List(reference)
+    result.refs = if (reference != null) Some(List(reference)) else None
     result.links = getLinksResult(valuableLinks)
-    result.h2 = h2Text
-    result.h3 = h3Text
+    result.h2 = if (h2Text.nonEmpty) Some(h2Text) else None
+    result.h3 = if (h3Text.nonEmpty) Some(h3Text) else None
 
     result
   }
@@ -66,6 +66,20 @@ class ArticleCrawler(browser: JsoupBrowser, url: String, reference: String = nul
       return false
     }
     true
+  }
+
+  private def filterH2(node: Element): Boolean = {
+    if (node == null) {
+      return false
+    }
+    node.tagName.equalsIgnoreCase("h2")
+  }
+
+  private def filterH3(node: Element): Boolean = {
+    if (node == null) {
+      return false
+    }
+    node.tagName.equalsIgnoreCase("h3")
   }
 
   private def filterLinks(node: Element): Boolean = {
@@ -99,10 +113,10 @@ class ArticleCrawler(browser: JsoupBrowser, url: String, reference: String = nul
 
 class ArticleCrawlerResult() {
   var title: String = _
-  var articleContent: String = _
+  var content: String = _
   var url: String = _
-  var references: List[String] = _
-  var h2: List[String] = _
-  var h3: List[String] = _
+  var refs: Option[List[String]] = _
+  var h2: Option[List[String]] = _
+  var h3: Option[List[String]] = _
   var links: List[(String, String)] = _
 }
